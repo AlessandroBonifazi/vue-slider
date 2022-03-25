@@ -36,3 +36,23 @@ const slides = [
 ];
 
 console.log(slides);
+
+const app = new Vue({
+    el: '#app',
+    data: {
+        slides,
+        activeSlideIndex: 0
+    },
+    methods: {
+        showPrevSlide() {
+            if (this.activeSlideIndex > 0) {
+                this.activeSlideIndex--;
+            }
+        },
+        showNextSlide() {
+            if (this.activeSlideIndex < this.slides.lenght) {
+                this.activeSlideIndex++;
+            }
+        }
+    }
+})
